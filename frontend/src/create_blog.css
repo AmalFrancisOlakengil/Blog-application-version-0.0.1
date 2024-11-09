@@ -1,0 +1,117 @@
+/* General styles */
+html{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body {
+    margin: 0px; /* Ensure no default margin on the body */
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Navigation styling */
+nav {
+    background-color: aliceblue;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0; /* Remove default margin from the nav */
+}
+
+nav ul li {
+    list-style: none;
+    padding: 20px;
+}
+
+nav ul li a {
+    font-size: x-large;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 10px 10px;
+    font-weight: 400;
+}
+
+nav ul li:hover {
+    color: orange;
+}
+
+/* Form container */
+.forms {
+    box-shadow: 0px 2px 50px 2px gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+   
+    padding: 20px;
+    border-radius: 10px; /* Responsive width */
+    /* Limit width on larger screens *//* Center the form with automatic left and right margins */
+}
+
+/* Form elements */
+.forms form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%; /* Ensure the form takes the full width of the container */
+    padding: 10px;
+}
+
+.name, .blog, .submit {
+    border-radius: 10px;
+    border: none;
+    width: 80%; /* Full width */
+    margin: 10px; /* Space between elements */
+}
+
+.name, .submit {
+    height: 40px; /* Consistent height */
+}
+
+.submit {
+    cursor: pointer;
+    font-weight: 500;
+    background-color: green;
+    height: 50px; /* Maintain height */
+}
+
+.submit:hover {
+    background-color: rgb(10, 171, 10);
+}
+
+.blog {
+    height: 100px; /* Height for the blog text area */
+}
+
+/* Headings */
+.forms h1 {
+    color: aliceblue;
+    font-size: 1.5rem; /* Adjust heading size */
+    text-align: center;
+}
+
+/* H1 outside forms */
+h1 {
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+@media (max-width: 425px) {
+   .forms{
+    padding: 0px;
+    width: 50%;
+   }
+   
+  }
+

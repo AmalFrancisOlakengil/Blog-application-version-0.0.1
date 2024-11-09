@@ -1,0 +1,50 @@
+body{
+    display: block;
+}
+
+nav {
+    background-color: aliceblue; /* Background color for the nav */
+}
+
+nav ul {
+    display: flex;              /* Use flexbox for horizontal layout */
+    justify-content: center;    /* Center the items in the nav */
+    padding: 0;                /* Remove default padding from the ul */
+    margin: 0;                 /* Remove default margin from the ul */
+}
+
+nav ul li {
+    list-style: none;          /* Remove bullets from the list */
+    padding: 20px;            /* Add padding for clickable area */
+    margin-left: 50px;        /* Space to the left of each list item */
+    margin-right: 50px;       /* Space to the right of each list item */
+}
+
+nav ul li a {
+    font-size: x-large;
+    text-decoration: none;     /* Remove underline from links */
+    color: inherit;           /* Use the inherited text color */
+    display: block;           /* Make the link fill the entire li area */
+    padding: 10px 15px; 
+    font-weight: 400;      /* Optional: add padding for the link */
+}
+nav ul li:hover{
+    color: orange;
+}
+
+.blog-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.blog-entry{
+    background-color: chocolate;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 50px 2px gray;
+}
+.blog-entry h3 p {
+    padding: 10px;
+    margin: 10px;
+}
