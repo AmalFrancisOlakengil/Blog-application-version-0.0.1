@@ -48,3 +48,9 @@ nav ul li:hover{
     padding: 10px;
     margin: 10px;
 }
+
+@media (max-width: 425px){
+    body{
+        margin-left: 15%;
+    }
+}

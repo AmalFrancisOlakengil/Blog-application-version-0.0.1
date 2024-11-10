@@ -105,12 +105,13 @@ nav ul li:hover {
 h1 {
     background-color: black;
     padding: 10px;
-    border-radius: 10px;
+    width: 100%;
+    border-radius: 5px;
 }
 @media (max-width: 425px) {
    .forms{
     padding: 0px;
-    width: 50%;
+    width: 80%;
    }
    
   }
