@@ -5,7 +5,9 @@ import os
 app = Flask(__name__)
 CORS(app)
 CORS(app, origins=["https://blog-application-version-0-0-1.vercel.app"])
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.instance_path, 'data.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 from datetime import datetime, timezone
