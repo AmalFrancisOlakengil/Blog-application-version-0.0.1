@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-
+import os
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
@@ -34,5 +34,6 @@ def get_blogs():
     blog_list = [{"id": blog.id, "name": blog.name, "content": blog.blog, 'date': blog.date_created.strftime('%d %B %Y')} for blog in blogs]
     return jsonify(blog_list), 200
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
