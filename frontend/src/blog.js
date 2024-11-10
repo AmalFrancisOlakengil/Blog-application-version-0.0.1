@@ -9,7 +9,7 @@ function Blog() {
     // Fetch blog entries from the API when the component mounts
     useEffect(() => {
         const fetchBlogs = async () => {
-            const response = await fetch('/api/blogs');
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/blogs`);
             const data = await response.json();
             setBlogs(data); // Set the fetched blog entries to state
         };
