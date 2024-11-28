@@ -10,7 +10,7 @@ function EditBlog() {
     // Fetch the blog data to populate the edit form
     useEffect(() => {
         const fetchBlog = async () => {
-            const response = await fetch(`/api/userblogs/${process.env.REACT_APP_BACKEND_URL}/${blogId}`);
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/userblogs/${blogId}`);
             const data = await response.json();
             setBlog(data); // Set the blog data to state
         };
@@ -26,7 +26,7 @@ function EditBlog() {
             content: blog.content,
         };
 
-        const response = await fetch(`/api/userblogs/${process.env.REACT_APP_BACKEND_URL}/${blogId}`, {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/userblogs/${blogId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updatedBlog),
