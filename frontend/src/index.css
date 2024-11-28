@@ -4,9 +4,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Scale down content for smaller screens */
+@media (max-width: 430px) {
+  body {
+    zoom: 0.45; /* Shrinks the content to 70% */
+    
+  }
 }

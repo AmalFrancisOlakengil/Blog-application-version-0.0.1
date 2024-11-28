@@ -34,7 +34,7 @@ nav ul li:hover{
 
 .blog-list{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     padding: 20px;
 }
 .blog-entry{
@@ -44,13 +44,66 @@ nav ul li:hover{
     border-radius: 10px;
     box-shadow: 0px 2px 50px 2px gray;
 }
-.blog-entry h3 p {
+.blog-entry h3{
     padding: 10px;
     margin: 10px;
+    background-color: bisque;
+    border-radius: 3px;
+}
+.blogcontent{
+    width:93%;
+    height: 400px;
+    background-color: aliceblue;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 20px;
+}
+.blog-date{
+    padding: 10px;
+    width: 93%px;
+    background-color: blanchedalmond;
+    margin: 10px;
+    border-radius: 2px;
 }
 
-@media (max-width: 425px){
-    body{
-        margin-left: 15%;
-    }
+
+
+.delete-button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+
+.edit-button{
+
+    margin: 10px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 2px;
+    background-color: rgb(238, 255, 3);
+    cursor: pointer;
+
+}
+
+.edit-button:hover{
+    background-color: rgb(128, 136, 20)
+}
+
+.logout{
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: x-large;
+    padding: 10px 10px;
+    display: block;
+    cursor: pointer;
 }

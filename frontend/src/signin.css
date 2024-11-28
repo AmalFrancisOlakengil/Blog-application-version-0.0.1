@@ -1,0 +1,20 @@
+.signin form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.signin form input{
+    padding: 10px;
+    width: 60%;
+    border: none;
+    border-radius: 2px;
+}
+
+.signin{
+    background-color: khaki;
+    padding: 30px;
+    border-radius: 5px;
+    margin-top: 30px;
+    box-shadow: 0px 2px 50px 2px gray;
+}

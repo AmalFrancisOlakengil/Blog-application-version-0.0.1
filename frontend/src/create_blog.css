@@ -32,6 +32,14 @@ nav ul li {
     list-style: none;
     padding: 20px;
 }
+.logout{
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: x-large;
+    padding: 10px 10px;
+    display: block;
+    cursor: pointer;
+}
 
 nav ul li a {
     font-size: x-large;
@@ -67,15 +75,14 @@ nav ul li:hover {
     width: 90%; /* Ensure the form takes the full width of the container */
     padding: 10px;
 }
-
-.name, .blog, .submit {
+.blog, .submit {
     border-radius: 10px;
     border: none;
     width: 80%; /* Full width */
     margin: 10px; /* Space between elements */
 }
 
-.name, .submit {
+.submit {
     height: 40px; /* Consistent height */
 }
 
@@ -99,15 +106,14 @@ nav ul li:hover {
     color: aliceblue;
     font-size: 1.5rem; /* Adjust heading size */
     text-align: center;
-}
-
-/* H1 outside forms */
-h1 {
     background-color: black;
     padding: 10px;
     width: 100%;
     border-radius: 5px;
 }
+
+/* H1 outside forms */
+
 @media (max-width: 425px) {
    .forms{
     padding: 0px;
@@ -115,4 +121,6 @@ h1 {
    }
    
   }
+
+
 
