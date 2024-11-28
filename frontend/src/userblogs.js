@@ -9,7 +9,7 @@ function Userblog() {
     // Fetch blog entries from the API when the component mounts
     useEffect(() => {
         const fetchBlogs = async () => {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/userblogs/`);
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/userblogs`);
             const data = await response.json();
             setBlogs(data); // Set the fetched blog entries to state
         };
@@ -34,7 +34,7 @@ function Userblog() {
         
     
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/logout/`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/logout`, {
                 method: 'POST',
             });
     

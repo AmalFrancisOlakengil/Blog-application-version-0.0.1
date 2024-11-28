@@ -12,7 +12,7 @@ function Signin(){
         event.preventDefault(); // Prevent page reload on form submission
 
         // Make a POST request to the backend with form data
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/signin/`, {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/signin`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
