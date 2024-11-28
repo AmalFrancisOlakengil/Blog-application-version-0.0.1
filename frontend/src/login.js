@@ -9,7 +9,7 @@ function Login(){
         event.preventDefault(); // Prevent page reload on form submission
 
         // Make a POST request to the backend with form data
-        const response = await fetch(`/api/login`, {
+        const response = await fetch(`/api/login/${process.env.REACT_APP_BACKEND_URL}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
