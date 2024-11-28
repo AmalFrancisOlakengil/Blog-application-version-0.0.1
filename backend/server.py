@@ -70,6 +70,7 @@ def logout():
 @app.route('/api/submit', methods=['POST'])
 def submit():
     if 'user_id' not in session:  # Check if user is logged in
+        print(session['user_id'])
         return jsonify({"message": "Unauthorized"}), 401
 
     data = request.get_json()
