@@ -35,7 +35,7 @@ function Userblog() {
     
         try {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/logout`, {
-                method: 'POST',
+                method: 'POST', credentials: 'include',
             });
     
             if (response.ok) {

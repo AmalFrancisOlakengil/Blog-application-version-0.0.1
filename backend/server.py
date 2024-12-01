@@ -8,7 +8,14 @@ import os
 app = Flask(__name__)
 load_dotenv()
 app.secret_key = os.getenv('SECRET_KEY')  # Set a secret key for sessions
-CORS(app, origins=["https://blog-application-version-0-0-1.vercel.app"])
+CORS(app, origins=["https://blog-application-version-0-0-1.vercel.app"], supports_credentials=True)
+
+app.config['SESSION_TYPE'] = 'filesystem'  # Or 'redis' for better scalability
+app.config['SESSION_PERMANENT'] = False
+app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+app.config['SESSION_COOKIE_SECURE'] = True
+
+session(app)
 
 # Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
