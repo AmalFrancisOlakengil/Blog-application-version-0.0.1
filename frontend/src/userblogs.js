@@ -9,7 +9,9 @@ function Userblog() {
     // Fetch blog entries from the API when the component mounts
     useEffect(() => {
         const fetchBlogs = async () => {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/userblogs`);
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/userblogs`,{
+                credentials: 'include',
+            });
             const data = await response.json();
             setBlogs(data); // Set the fetched blog entries to state
         };
@@ -19,7 +21,7 @@ function Userblog() {
 
     const deleteBlog = async (blogId) => {
         const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/userblogs/${blogId}`, {
-            method: 'DELETE', credentials: 'include'
+            method: 'DELETE', credentials: 'include',
         });
 
         if (response.ok) {
