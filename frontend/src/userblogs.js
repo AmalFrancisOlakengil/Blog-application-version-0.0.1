@@ -19,7 +19,7 @@ function Userblog() {
 
     const deleteBlog = async (blogId) => {
         const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/userblogs/${blogId}`, {
-            method: 'DELETE',
+            method: 'DELETE', credentials: 'include'
         });
 
         if (response.ok) {
