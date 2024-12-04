@@ -86,6 +86,7 @@ function Create() {
                                 </form>
                             </div>
                         </center>
+                        <center><h4>Disclaimer: Requests can take up to 50 seconds</h4></center>
                     </div>
               
     );

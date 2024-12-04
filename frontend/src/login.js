@@ -42,6 +42,7 @@ function Login(){
         </form>
         <center><h3><Link to="/">"Go Back"</Link></h3></center>  
     </div>
+    <center><h4>Disclaimer: Requests can take up to 50 seconds</h4></center>
     </>);
 }
 

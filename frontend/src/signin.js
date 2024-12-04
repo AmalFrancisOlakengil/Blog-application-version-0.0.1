@@ -49,7 +49,7 @@ function Signin(){
         </form>
         <h3>If you already have an Account <Link to="/login">"Click here!"</Link></h3>
     </div>
-   
+    <center><h4>Disclaimer: Requests can take up to 50 seconds</h4></center>
     </>);
 }
 
