@@ -1,20 +1,21 @@
 body {
     background-image: url(Background.jpg);
-    background-position: 0 0; /* Start position of the background */
-    background-repeat: repeat; /* Ensure the background repeats infinitely */
-    background-size: auto; /* Keep the original size of the background image */
-    background-attachment: fixed; /* Keeps the background fixed while scrolling */
-    animation: diagonalMove 20s linear infinite; /* Smooth diagonal animation */
+    background-position: 0 0; /* Starting position of the background */
+    background-repeat: repeat; /* Repeat the image to avoid gaps */
+    background-size: 150%; /* Scale the image to ensure overlap */
+    background-attachment: fixed; /* Keeps background fixed during scrolling */
+    animation: diagonalMove 10s linear infinite; /* Continuous smooth diagonal animation */
 }
 
 @keyframes diagonalMove {
     from {
-        background-position: 0 0;
+        background-position: 0 0; /* Start animation */
     }
     to {
-        background-position: 400px 400px; /* Diagonal movement */
+        background-position: 100% 100%; /* End at the diagonal edge */
     }
 }
+
 .signin form{
     display: flex;
     flex-direction: column;
