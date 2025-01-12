@@ -4,7 +4,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    animation: diagonalMove 20s linear infinite;
 }
+@keyframes diagonalMove {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 400px 400px; /* Matches diagonal direction */
+    }
+  }
 .signin form{
     display: flex;
     flex-direction: column;
