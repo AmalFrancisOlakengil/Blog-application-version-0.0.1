@@ -1,19 +1,20 @@
 body {
     background-image: url(Background.jpg);
-    background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    animation: diagonalMove 20s linear infinite;
+    background-position: 0 0; /* Start position of the background */
+    background-repeat: repeat; /* Ensure the background repeats infinitely */
+    background-size: auto; /* Keep the original size of the background image */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    animation: diagonalMove 20s linear infinite; /* Smooth diagonal animation */
 }
+
 @keyframes diagonalMove {
     from {
-      background-position: 0 0;
+        background-position: 0 0;
     }
     to {
-      background-position: 400px 400px; /* Matches diagonal direction */
+        background-position: 400px 400px; /* Diagonal movement */
     }
-  }
+}
 .signin form{
     display: flex;
     flex-direction: column;
