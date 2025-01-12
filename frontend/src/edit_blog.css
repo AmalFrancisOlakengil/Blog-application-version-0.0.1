@@ -13,11 +13,22 @@
 }
 body {
     background-image: url(Background.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background-position: 0 0; /* Starting position of the background */
+    background-repeat: repeat; /* Repeat the image to avoid gaps */
+    background-size: 150%; /* Scale the image to ensure overlap */
+    background-attachment: fixed; /* Keeps background fixed during scrolling */
+    animation: diagonalMove 10s linear infinite; /* Continuous smooth diagonal animation */
 }
+
+@keyframes diagonalMove {
+    from {
+        background-position: 0 0; /* Start animation */
+    }
+    to {
+        background-position: 100% 100%; /* End at the diagonal edge */
+    }
+}
+
 .edit-blog form{
     display: flex;
     flex-direction: column;

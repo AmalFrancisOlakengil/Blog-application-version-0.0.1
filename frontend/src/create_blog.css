@@ -6,19 +6,38 @@ html{
     justify-content: center;
     flex-direction: column;
 }
+body {
+    background-image: url(Background.jpg);
+    background-position: 0 0; /* Starting position of the background */
+    background-repeat: repeat; /* Repeat the image to avoid gaps */
+    background-size: 150%; /* Scale the image to ensure overlap */
+    background-attachment: fixed; /* Keeps background fixed during scrolling */
+    animation: diagonalMove 10s linear infinite; /* Continuous smooth diagonal animation */
+}
 
 body {
     margin: 0px; /* Ensure no default margin on the body */
     background-image: url(Background.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background-position: 0 0; /* Starting position of the background */
+    background-repeat: repeat; /* Repeat the image to avoid gaps */
+    background-size: 150%; /* Scale the image to ensure overlap */
+    background-attachment: fixed; /* Keeps background fixed during scrolling */
+    animation: diagonalMove 10s linear infinite; /* Continuous smooth diagonal animation */
     display: flex;
     justify-content: center;
     align-items: center; /* Center vertically */
     height: 100vh; /* Full viewport height */
 }
+
+@keyframes diagonalMove {
+    from {
+        background-position: 0 0; /* Start animation */
+    }
+    to {
+        background-position: 100% 100%; /* End at the diagonal edge */
+    }
+}
+
 
 /* Navigation styling */
 nav {
@@ -55,7 +74,7 @@ nav ul li a {
 }
 
 nav ul li:hover {
-    color: orange;
+    color: rgb(249, 185, 67);
 }
 
 /* Form container */
