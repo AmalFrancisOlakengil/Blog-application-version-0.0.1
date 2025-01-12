@@ -4,6 +4,13 @@
     align-items: center;
     justify-content: center;
 }
+body {
+    background-image: url(Background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 .login form input{
     padding: 10px;
     width: 100%;
