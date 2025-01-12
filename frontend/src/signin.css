@@ -1,3 +1,10 @@
+body {
+    background-image: url(Background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 .signin form{
     display: flex;
     flex-direction: column;

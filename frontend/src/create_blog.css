@@ -9,7 +9,11 @@ html{
 
 body {
     margin: 0px; /* Ensure no default margin on the body */
-    background-color: aliceblue;
+    background-image: url(Background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center; /* Center vertically */
