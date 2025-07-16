@@ -42,6 +42,8 @@ function EditBlog() {
     };
 
     return (
+        <>
+        <center>
         <div className="edit-blog">
             <h2>Edit Blog</h2>
             <form onSubmit={handleSubmit}>
@@ -55,6 +57,8 @@ function EditBlog() {
                 <button type="submit" className="submit">Save Changes</button>
             </form>
         </div>
+        </center>
+        </>
     );
 }
 
