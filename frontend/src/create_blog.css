@@ -1,149 +1,80 @@
-/* General styles */
-html{
+.main-content {
     display: flex;
-    justify-items: center;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-}
-body {
-    background-image: url(Background.jpg);
-    background-position: 0 0; /* Starting position of the background */
-    background-repeat: repeat; /* Repeat the image to avoid gaps */
-    background-size: 150%; /* Scale the image to ensure overlap */
-    background-attachment: fixed; /* Keeps background fixed during scrolling */
-    animation: diagonalMove 10s linear infinite; /* Continuous smooth diagonal animation */
+    flex-grow: 1;
+    width: 100%;
+    padding: 2rem;
 }
 
-body {
-    margin: 0px; /* Ensure no default margin on the body */
-    background-image: url(Background.jpg);
-    background-position: 0 0; /* Starting position of the background */
-    background-repeat: repeat; /* Repeat the image to avoid gaps */
-    background-size: 150%; /* Scale the image to ensure overlap */
-    background-attachment: fixed; /* Keeps background fixed during scrolling */
-    animation: diagonalMove 10s linear infinite; /* Continuous smooth diagonal animation */
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
-}
-
-@keyframes diagonalMove {
-    from {
-        background-position: 0 0; /* Start animation */
-    }
-    to {
-        background-position: 100% 100%; /* End at the diagonal edge */
-    }
-}
-
-
-/* Navigation styling */
-nav {
-    background-color: aliceblue;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0; /* Remove default margin from the nav */
-}
-
-nav ul li {
-    list-style: none;
-    padding: 20px;
-}
-.logout{
-    margin-top: 15px;
-    font-weight: 400;
-    font-size: x-large;
-    padding: 10px 10px;
-    display: block;
-    cursor: pointer;
-}
-
-nav ul li a {
-    font-size: x-large;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    padding: 10px 10px;
-    font-weight: 400;
-}
-
-nav ul li:hover {
-    color: rgb(249, 185, 67);
-}
-
-/* Form container */
 .forms {
-    box-shadow: 0px 2px 50px 2px gray;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-   
-    padding: 20px;
-    border-radius: 10px; /* Responsive width */
-    /* Limit width on larger screens *//* Center the form with automatic left and right margins */
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 700px;
+    margin: 2rem 0;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Form elements */
 .forms form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 90%; /* Ensure the form takes the full width of the container */
-    padding: 10px;
-}
-.blog, .submit {
-    border-radius: 10px;
-    border: none;
-    width: 80%; /* Full width */
-    margin: 10px; /* Space between elements */
-}
-
-.submit {
-    height: 40px; /* Consistent height */
-}
-
-.submit {
-    cursor: pointer;
-    font-weight: 500;
-    background-color: green;
-    height: 50px; /* Maintain height */
-}
-
-.submit:hover {
-    background-color: rgb(10, 171, 10);
-}
-
-.blog {
-    height: 100px; /* Height for the blog text area */
-}
-
-/* Headings */
-.forms h1 {
-    color: aliceblue;
-    font-size: 1.5rem; /* Adjust heading size */
-    text-align: center;
-    background-color: black;
-    padding: 10px;
+    align-items: center;
     width: 100%;
-    border-radius: 5px;
+    gap: 1.5rem;
 }
 
-/* H1 outside forms */
+.blog-title, .blog-content-input {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    transition: all var(--transition-speed) ease;
+}
 
-@media (max-width: 425px) {
-   .forms{
-    padding: 0px;
-    width: 80%;
-   }
-   
-  }
+.blog-content-input {
+    height: 300px;
+    resize: vertical;
+    min-height: 200px;
+}
 
+.forms h1 {
+    color: var(--text-dark);
+    font-size: 1.75rem;
+    text-align: center;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    width: 100%;
+    border-radius: 8px;
+    margin: 0 0 2rem 0;
+    color: white;
+}
 
+@media (max-width: 768px) {
+    .forms {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .blog-content-input {
+        height: 250px;
+    }
+}
 
+@media (max-width: 480px) {
+    .forms {
+        padding: 1rem;
+    }
+    
+    .forms h1 {
+        font-size: 1.5rem;
+    }
+}

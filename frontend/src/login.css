@@ -1,38 +1,61 @@
-.login form{
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.login {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.login:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.login h2 {
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.login form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-body {
-    background-image: url(Background.jpg);
-    background-position: 0 0; /* Starting position of the background */
-    background-repeat: repeat; /* Repeat the image to avoid gaps */
-    background-size: 150%; /* Scale the image to ensure overlap */
-    background-attachment: fixed; /* Keeps background fixed during scrolling */
-    animation: diagonalMove 10s linear infinite; /* Continuous smooth diagonal animation */
-}
-
-@keyframes diagonalMove {
-    from {
-        background-position: 0 0; /* Start animation */
-    }
-    to {
-        background-position: 100% 100%; /* End at the diagonal edge */
-    }
-}
-
-.login form input{
-    padding: 10px;
+    gap: 1.5rem;
     width: 100%;
-    border: none;
-    border-radius: 2px;
 }
 
-.login{
-    background-color: khaki;
-    padding: 10px 150px 10px 150px;
-    border-radius: 5px;
-    margin-top: 30px;
-    box-shadow: 0px 2px 50px 2px gray;
+.login form input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.login form input[type="submit"]:hover {
+    background-color: var(--primary-hover);
+}
+
+.login form a {
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: -0.5rem;
+}
+
+@media (max-width: 480px) {
+    .login {
+        padding: 1.5rem;
+    }
 }

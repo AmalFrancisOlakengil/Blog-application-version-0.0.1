@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
 import "./create_blog.css";
-
+import "./common.css"; 
 function Create() {
     // Define state for form inputs
     const [blog, setBlog] = useState('');

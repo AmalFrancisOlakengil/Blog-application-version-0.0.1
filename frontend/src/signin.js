@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "./signin.css"
-
+import "./common.css"; 
 function Signin(){
     const navigate = useNavigate();
     const [name, setname] = useState('');
@@ -35,7 +35,7 @@ function Signin(){
     };
 
     return(<>  
-    
+    <center>
     <div className='signin'>
         <form onSubmit={handleSignin}>
             <h1>Signin</h1>
@@ -49,6 +49,7 @@ function Signin(){
         </form>
         <h3>If you already have an Account <Link to="/login">"Click here!"</Link></h3>
     </div>
+    </center>
     <center><h4>Disclaimer: Requests can take up to 50 seconds</h4></center>
     </>);
 }

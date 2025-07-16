@@ -1,123 +1,157 @@
-body{
-    display: block;
-    background-image: url(Background.jpg);
-    background-position: 0 0; /* Starting position of the background */
-    background-repeat: repeat; /* Repeat the image to avoid gaps */
-    background-size: 150%; /* Scale the image to ensure overlap */
-    background-attachment: fixed; /* Keeps background fixed during scrolling */
-    animation: diagonalMove 10s linear infinite; /* Continuous smooth diagonal animation */
-}
-@keyframes diagonalMove {
-    from {
-        background-position: 0 0; /* Start animation */
-    }
-    to {
-        background-position: 100% 100%; /* End at the diagonal edge */
-    }
-}
-
+/* Navigation */
 nav {
-    background-color: aliceblue; /* Background color for the nav */
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
-    display: flex;              /* Use flexbox for horizontal layout */
-    justify-content: center;    /* Center the items in the nav */
-    padding: 0;                /* Remove default padding from the ul */
-    margin: 0;                 /* Remove default margin from the ul */
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    list-style: none;          /* Remove bullets from the list */
-    padding: 20px;            /* Add padding for clickable area */
-    margin-left: 50px;        /* Space to the left of each list item */
-    margin-right: 50px;       /* Space to the right of each list item */
+    position: relative;
+    transition: all var(--transition-speed) ease;
 }
 
-nav ul li a {
-    font-size: x-large;
-    text-decoration: none;     /* Remove underline from links */
-    color: inherit;           /* Use the inherited text color */
-    display: block;           /* Make the link fill the entire li area */
-    padding: 10px 15px; 
-    font-weight: 400;      /* Optional: add padding for the link */
-}
-nav ul li:hover{
-    color: orange;
+nav ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 25%;
+    height: 50%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
 }
 
-.blog-list{
+.logout, nav ul li a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: var(--text-light);
+    display: block;
+    padding: 1.25rem 1.5rem;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+}
+
+nav ul li a::before, .logout::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--secondary-color);
+    transition: width var(--transition-speed) ease;
+}
+
+nav ul li:hover a::before, 
+nav ul li:hover .logout::before {
+    width: 70%;
+}
+
+nav ul li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li:hover a, 
+nav ul li:hover .logout {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Blog list styles */
+.blog-list {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-}
-.blog-entry{
-    background-color: chocolate;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 50px 2px gray;
-}
-.blog-entry h3{
-    padding: 10px;
-    margin: 10px;
-    background-color: bisque;
-    border-radius: 3px;
-}
-.blogcontent{
-    width:93%;
-    height: 400px;
-    background-color: aliceblue;
-    margin: 10px;
-    border-radius: 10px;
-    padding: 20px;
-}
-.blog-date{
-    padding: 10px;
-    width: 93%px;
-    background-color: blanchedalmond;
-    margin: 10px;
-    border-radius: 2px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.blog-entry {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.blog-entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
 
-.delete-button {
-    background-color: red;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
+.blog-entry h3 {
+    padding: 0.75rem;
+    margin: 0 0 1rem 0;
+    background-color: var(--bg-light);
     border-radius: 5px;
+    color: var(--text-dark);
+    font-size: 1.5rem;
 }
 
-.delete-button:hover {
-    background-color: darkred;
+.blog-content {
+    width: 100%;
+    background-color: var(--bg-light);
+    margin: 1rem 0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    line-height: 1.8;
 }
 
-
-.edit-button{
-
-    margin: 10px;
-    border: none;
-    padding: 5px 10px 5px 10px;
-    border-radius: 2px;
-    background-color: rgb(238, 255, 3);
-    cursor: pointer;
-
+.blog-date {
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #666;
 }
 
-.edit-button:hover{
-    background-color: rgb(128, 136, 20)
+/* Button styles specific to blog */
+.blog-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.logout{
-    margin-top: 15px;
-    font-weight: 400;
-    font-size: x-large;
-    padding: 10px 10px;
-    display: block;
-    cursor: pointer;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li:not(:last-child)::after {
+        display: none;
+    }
+    
+    .logout, nav ul li a {
+        padding: 1rem;
+    }
+    
+    .blog-list {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-actions {
+        flex-direction: column;
+    }
+    
+    .blog-content {
+        padding: 1rem;
+    }
 }

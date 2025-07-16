@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./login.css";
 import { Link, useNavigate } from 'react-router-dom';
+import "./common.css"; 
 function Login(){
     const [email, setemail] = useState('');
     const [password, setpassword] = useState('');
@@ -31,7 +32,8 @@ function Login(){
     };
 
     return(<>  
-    <div className='login'>
+    <center>
+        <div className='login'>
         <form onSubmit={handleLogin}>
             <h1>Login</h1>
             <input type='email' required placeholder='Email' value={email}
@@ -42,6 +44,7 @@ function Login(){
         </form>
         <center><h3><Link to="/">"Go Back"</Link></h3></center>  
     </div>
+    </center>
     <center><h4>Disclaimer: Requests can take up to 50 seconds</h4></center>
     </>);
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './edit_blog.css';
-
+import "./common.css"; 
 function EditBlog() {
     const { blogId } = useParams(); // Get the blogId from the URL
     const [blog, setBlog] = useState({ content: '' });

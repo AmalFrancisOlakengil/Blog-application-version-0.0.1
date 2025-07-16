@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "./blog.css";
+import "./common.css"; 
 
 function Blog() {
     const [blogs, setBlogs] = useState([]); // State to store blog entries

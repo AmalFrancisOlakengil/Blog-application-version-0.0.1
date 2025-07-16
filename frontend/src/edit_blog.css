@@ -1,46 +1,50 @@
-.edit-blog{
-    margin-top: 30px;
-    box-shadow: 0px 2px 50px 2px gray;
+.edit-blog-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-    padding: 20px;
-    border-radius: 10px;
-    width: 600px;
-    height: 400px;
-
-}
-body {
-    background-image: url(Background.jpg);
-    background-position: 0 0; /* Starting position of the background */
-    background-repeat: repeat; /* Repeat the image to avoid gaps */
-    background-size: 150%; /* Scale the image to ensure overlap */
-    background-attachment: fixed; /* Keeps background fixed during scrolling */
-    animation: diagonalMove 10s linear infinite; /* Continuous smooth diagonal animation */
-}
-
-@keyframes diagonalMove {
-    from {
-        background-position: 0 0; /* Start animation */
-    }
-    to {
-        background-position: 100% 100%; /* End at the diagonal edge */
-    }
-}
-
-.edit-blog form{
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    justify-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 2rem;
 }
-.blogedit{
-    border-radius: 10px;
-    border: none;
-    margin: 10px; /* Space between elements */
-    width: 500px;
-    height: 180px;
 
+.edit-blog {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 700px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.edit-blog form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+.blog-edit {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: 100%;
+    min-height: 300px;
+    resize: vertical;
+    font-size: 1rem;
+}
+
+.edit-blog h2 {
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .edit-blog {
+        padding: 1.5rem;
+    }
 }
