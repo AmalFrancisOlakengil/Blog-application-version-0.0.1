@@ -4,17 +4,21 @@ from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 from datetime import datetime, timezone
 import os
+from flask_session import Session
+import redis
 
 app = Flask(__name__)
 load_dotenv()
 app.secret_key = os.getenv('SECRET_KEY')  # Set a secret key for sessions
 CORS(app, origins=["https://blog-application-version-0-0-1.vercel.app"], supports_credentials=True)
 
-app.config['SESSION_TYPE'] = 'filesystem'  # Or 'redis' for better scalability
+app.config['SESSION_TYPE'] = 'redis' # Or 'redis' for better scalability
 app.config['SESSION_PERMANENT'] = False
+app.config['SESSION_USE_SIGNER'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'None'
 app.config['SESSION_COOKIE_SECURE'] = True
-
+app.config['SESSION_REDIS'] = redis.from_url(os.getenv('REDIS_URL'))
+Session(app)
 # Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
